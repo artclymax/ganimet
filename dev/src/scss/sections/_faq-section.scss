@@ -1,0 +1,58 @@
+@use "../tools" as *;
+
+.faq-section {
+	&__container {
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: 20px;
+	}
+}
+
+.faq-section-item {
+	border-radius: adapt(12, 8) adapt(12, 8) 0 0;
+	overflow: hidden;
+	&__btn {
+		@include reset-btn;
+		padding: adapt(15, 10) adapt(15, 10);
+		padding-right: adapt(60, 10);
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		justify-content: space-between;
+		background: var(--color-white);
+	}
+
+	&__title {
+		@include body-l;
+	}
+
+	&__icon {
+		@include square(16px);
+		@include bgimg(url("../../../public/images/icons/faq-arrow-down.svg"));
+		transition: all 0.3s;
+
+		.spoiler-active & {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__content {
+	}
+
+	&__descr {
+		padding: adapt(20, 10);
+		padding-right: adapt(60, 10);
+		background: var(--holodnyy-svetlo-seryy);
+		border-radius: 0 0 adapt(12, 8) adapt(12, 8);
+	}
+}
+
+.spoiler-active {
+}
+.faq-icon-plus {
+}
+.descr {
+}

@@ -1,0 +1,97 @@
+@use "../tools" as *;
+
+.hero-404 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	min-height: calc(100dvh - var(--header-height));
+	padding-block: var(--section-padding);
+	&__container {
+	}
+
+	&__wrapper {
+		@include flex-column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		gap: adapt(30, 20);
+		//max-width: 734px;
+		margin: 0 auto;
+	}
+
+	&__title {
+		text-wrap: balance;
+	}
+
+	&__404-icon {
+		display: block;
+		width: adapt(1120, 340);
+	}
+
+	&__descr {
+		@include body-base;
+		@include media($mobile) {
+			@include body-s;
+		}
+	}
+
+	&__btn {
+		max-width: 340px;
+	}
+
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		//@include overlay(var(--color-black), 0.4);
+		@include media($mobile) {
+			--object-pos: left center;
+		}
+	}
+}
+
+.hero-thank-you {
+	color: var(--color-background);
+	.hero-404__title {
+		//@include title-3;
+	}
+	.hero-404__descr {
+		@include body-s;
+		font-family: var(--font-family-main);
+		@include media($mobile, min) {
+			@include title-3;
+		}
+	}
+	&__form {
+		@include flex-column;
+		gap: 20px;
+		align-items: center;
+		max-width: 386px;
+		width: 100%;
+		p {
+			@include reset;
+			@include label;
+		}
+	}
+
+	&__input {
+		width: 100%;
+		background: var(--color-white);
+		border: 1px solid var(--glubokoe-teploe-zoloto);
+		border-radius: 4px;
+		padding: 20px 24px;
+		color: var(--color-text-primary);
+	}
+
+	&__btn {
+		max-width: 100%;
+	}
+	.hero-404__image {
+		--object-pos: 80%;
+		//@include overlay(var(--color-black), 0.2);
+	}
+}

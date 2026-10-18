@@ -1,0 +1,47 @@
+@use "../tools" as *;
+
+.why-us {
+	&__container {
+	}
+
+	&__list {
+	}
+
+	&__item {
+	}
+}
+
+.why-us-item {
+	padding: adapt(20, 10) adapt(24, 10);
+	@include flex-column;
+	gap: adapt(20, 10);
+	
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid rgba(200, 169, 107, 0.2);
+	}
+
+	&__image {
+		flex-shrink: 0;
+		height: adapt(52, 38);
+
+		img {
+			height: 100%;
+		}
+	}
+
+	&__title {
+		@include reset;
+		@include body-l;
+	}
+
+	&__descr {
+		@include media($mobile, min) {
+			@include body-base;
+		}
+	}
+}
+

@@ -1,0 +1,77 @@
+@use "../tools" as *;
+
+.faq-icon-plus {
+	position: relative;
+	@include square(40px);
+
+	&:before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 2px;
+		width: 40%;
+		border-radius: 8px;
+		background: var(--glubokoe-teploe-zoloto);
+		transition: all 0.3s;;
+	}
+
+	&::after {
+		transform: translate(-50%, -50%) rotate(90deg);
+	}
+}
+
+.icon {
+	--width: 20px;
+	--height: var(--width);
+	--bg-size: contain;
+	--bg-color: var(--color-0);
+
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+
+	&::before {
+		content: "";
+		flex-shrink: 0;
+		//margin-top: 6px;
+		width: var(--width);
+		height: var(--height);
+		background-position: center;
+		background-size: var(--bg-size);
+		background-repeat: no-repeat;
+		background-color: var(--bg-color);
+		background-image: var(--icon-bg);
+	}
+
+	&--after {
+		&::before {
+			display: none;
+		}
+		&::after {
+			content: "";
+			flex-shrink: 0;
+			width: var(--width);
+			height: var(--height);
+			background-position: center;
+			background-size: var(--bg-size);
+			background-repeat: no-repeat;
+			background-image: var(--icon-bg);
+		}
+	}
+}
+
+.icon--phones {
+	--icon-bg: url("../../../public/icons/phone.svg");
+}
+.icon--email {
+	--icon-bg: url("../../../public/icons/email.svg");
+}
+.icon--address {
+	--icon-bg: url("../../../public/icons/address.svg");
+}
+.icon--time {
+	--icon-bg: url("../../../public/icons/time.svg");
+}

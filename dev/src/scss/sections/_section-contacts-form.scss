@@ -1,0 +1,35 @@
+@use "../tools" as *;
+
+.section-contacts-form {
+	margin-top: var(--section-padding-05);
+	&__header-container {
+		&:not(:last-child) {
+			margin-bottom: 60px;
+		}
+	}
+
+	&__section {
+		position: relative;
+		padding-block: adapt(48, 10);
+	}
+
+	&__container {
+		display: grid;
+		align-items: center;
+		gap: 20px;
+		grid-template-columns: 1fr 1.4fr;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__form {
+	}
+
+	&__image {
+		@include image-abs;
+		@include overlay(var(--color-white), 0.6);
+		z-index: -1;
+	}
+}

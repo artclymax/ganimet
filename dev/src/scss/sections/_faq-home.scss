@@ -1,0 +1,49 @@
+@use "../tools" as *;
+
+.faq-home {
+	&__container {
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: 20px;
+	}
+}
+
+.faq-home-item {
+	&__btn {
+		@include reset-btn;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		width: 100%;
+		padding: adapt(20, 10);
+	}
+
+	&__title {
+		@include body-l;
+	}
+
+	&__icon {
+		flex-shrink: 0;
+		.spoiler-active & {
+			&::after {
+				transform: translate(-50%, -50%) rotate(180deg);
+			}
+		}
+	}
+
+	&__content {
+	}
+
+	&__descr {
+		padding: adapt(20, 10);
+		padding-top: unset;
+		margin-right: adapt(40, 24);
+	}
+}
+
+.spoiler-active {
+}

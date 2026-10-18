@@ -1,0 +1,52 @@
+@use "../tools" as *;
+
+.about-benefits {
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 20px;
+
+		@include media($tablet) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__col {
+		@include flex-column;
+		gap: adapt(20, 10);
+	}
+
+	&__col-1 {
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+
+	&__col-2 {
+		@include media($mobile) {
+			order: 5 !important;
+		}
+	}
+
+	&__col-img-1 {
+	}
+}
+.about-benefits-content {
+	@include media($tablet, min) {
+		grid-column: span 2;
+		max-width: 550px;
+	}
+}
+
+.about-benefits-image {
+	overflow: hidden;
+	height: 167px;
+	border-radius: adapt(16, 8);
+}

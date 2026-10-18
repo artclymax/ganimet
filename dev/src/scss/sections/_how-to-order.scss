@@ -1,0 +1,145 @@
+@use "../tools" as *;
+
+.section {
+}
+.how-to-order {
+	&__container {
+	}
+
+	&__list {
+		@include reset-list;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+		grid-auto-flow: dense;
+	}
+
+	&__item {
+		position: relative;
+		@include media($mobile, min) {
+			&:nth-child(4n) {
+				grid-column: 1;
+			}
+
+			&:nth-child(4n + 3) {
+				grid-column: 2;
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				pointer-events: none;
+				z-index: 2;
+			}
+			&:nth-child(4n + 1)::after {
+				width: 55px;
+				height: 24px;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%) translateX(80%);
+				@include bgimg(url("../../../public/images/icons/ho-arrow-right.svg"));
+			}
+
+			&:nth-child(4n + 2)::after,
+			&:nth-child(4n)::after {
+				//content: "↓";
+				width: 24px;
+				height: 55px;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%) translateY(80%);
+				@include bgimg(url("../../../public/images/icons/ho-arrow-down.svg"));
+			}
+
+			&:nth-child(4n + 3)::after {
+				//content: "←";
+				width: 55px;
+				height: 24px;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%) translateX(-80%);
+				@include bgimg(url("../../../public/images/icons/ho-arrow-left.svg"));
+			}
+
+			&:last-child::after {
+				content: none;
+			}
+		}
+
+		&:not(:last-child) {
+		}
+	}
+}
+
+.how-to-order-item {
+	padding: adapt(20, 10);
+	@include flex-column;
+	gap: adapt(20, 10);
+
+	&__header {
+		display: flex;
+		align-items: flex-end;
+		gap: 10px;
+
+		&:not(:last-child) {
+			padding-bottom: 10px;
+			border-bottom: 1px solid rgba(200, 169, 107, 0.2);
+		}
+		@include media($mobile) {
+			position: relative;
+			&:after {
+				content: "";
+				position: absolute;
+				pointer-events: none;
+				z-index: 2;
+				width: 55px;
+				height: 24px;
+				bottom: 0;
+				right: 0;
+				transform: translateY(50%) translateX(20%);
+				@include bgimg(url("../../../public/images/icons/ho-arrow-right.svg"));
+			}
+		}
+	}
+
+	&__number {
+		flex-shrink: 0;
+		@include square(adapt(52, 44));
+		background: var(--myagkoe-tehnologichnoe-zoloto);
+		text-align: center;
+		@include flex-center;
+		border-radius: 50%;
+		color: var(--belyy);
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+}
+
+.how-to-order-swiper {
+	width: 100%;
+	height: 100%;
+	@include media($mobile) {
+		display: grid !important;
+	}
+	&__wrapper {
+	}
+
+	&__pagination {
+	}
+}
+
+.how-to-order-slide {
+	@include media($mobile) {
+		&:last-child {
+			.how-to-order-item__header:after {
+				display: none;
+			}
+		}
+	}
+	&__wrapper {
+	}
+}

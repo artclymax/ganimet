@@ -1,0 +1,41 @@
+@use "../tools" as *;
+
+.single-service-benefits {
+	&__container {
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__item {
+	}
+}
+
+.single-service-benefits-item {
+	padding: adapt(20, 10);
+	border-radius: adapt(24, 12);
+	display: flex;
+	gap: adapt(20, 10);
+
+	&__image {
+		flex: 0 0 adapt(55, 30);
+	}
+
+	&__content {
+		@include flex-column;
+		gap: adapt(20, 10);
+	}
+
+	&__title {
+		&:not(:last-child) {
+			padding-bottom: adapt(20, 10);
+			border-bottom: 1px solid var(--myagkoe-tehnologichnoe-zoloto);
+		}
+	}
+
+	&__descr {
+	}
+}

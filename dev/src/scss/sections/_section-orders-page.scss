@@ -1,0 +1,55 @@
+@use "../tools" as *;
+
+.section-orders-page {
+	&__container {
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: 20px;
+	}
+	&__small {
+		@include body-base;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+
+		@include media($mobile) {
+			@include body-s;
+		}
+	}
+}
+
+.section-orders-page-item {
+	padding: adapt(20, 10);
+	border-radius: adapt(24, 12);
+	display: flex;
+	gap: adapt(20, 10);
+	.items-reverse & {
+		flex-direction: row-reverse;
+		gap: adapt(70, 10);
+	}
+	&__icon {
+		flex-shrink: 0;
+		height: adapt(52, 26);
+		img {
+			height: 100%;
+		}
+	}
+
+	&__content {
+		@include flex-column;
+		gap: adapt(20, 10);
+	}
+
+	&__title {
+		&:not(:last-child) {
+			padding-bottom: adapt(20, 10);
+			border-bottom: 1px solid var(--myagkoe-tehnologichnoe-zoloto);
+		}
+	}
+
+	&__descr {
+	}
+}

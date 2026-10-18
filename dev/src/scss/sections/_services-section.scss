@@ -1,0 +1,89 @@
+@use "../tools" as *;
+
+.services-section {
+	&__container {
+		@include flex-column;
+		gap: adapt(75, 40);
+	}
+
+	&__title {
+		@include media($mobile, min) {
+			align-self: center;
+			text-align: center;
+		}
+	}
+
+	&__list {
+		@include reset-list;
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+
+	&__item {
+		flex: 0 1 adapt(590, 340);
+
+		@include media($mobile) {
+			flex: 1 1 340px;
+		}
+	}
+}
+
+.services-section-item {
+	@include flex-column;
+	overflow: hidden;
+	height: 100%;
+	border-radius: adapt(24, 12);
+
+	&__link-wrapper {
+		height: 100%;
+		@include reset-link;
+		@include flex-column;
+
+		@include hover {
+			.services-section-item__image img {
+				transform: scale(1);
+			}
+		}
+	}
+
+	&__image {
+		flex-shrink: 0;
+		height: 196px;
+		overflow: hidden;
+		img {
+			transform: scale(1.1);
+			transition: all 0.3s;
+		}
+	}
+
+	&__content {
+		flex: 1 1 adapt(267, 200);
+		height: 100%;
+		padding: adapt(30, 10);
+		@include flex-column;
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__descr {
+		flex: 1 1 100%;
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+		@include media($mobile) {
+			@include body-s;
+		}
+	}
+
+	&__btn {
+		max-width: 100%;
+		flex-shrink: 0;
+	}
+}

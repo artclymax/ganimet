@@ -1,0 +1,42 @@
+@use "../tools" as *;
+
+:root {
+	--color-0: rgba(0, 0, 0, 0);
+	--color-black: #000;
+	--color-white: #fff;
+
+	// Colors
+	--osnovnoy-temnyy: #2b2b2f;
+	--glubokiy-grafit: #1f2023;
+	--osnovnoy-seryy-tekstovyy: #5f6368;
+	--svetlyy-fon: #f7f7f5;
+	--holodnyy-svetlo-seryy: #e8e8e4;
+	--belyy: #fff;
+	--myagkoe-tehnologichnoe-zoloto: #c8a96b;
+	--glubokoe-teploe-zoloto: #a88445;
+	--ochen-svetlyy-sero-bezhevyy: #f1efea;
+	--razdeliteli--bordery: #d6d3cd;
+	--osnovnaya-knopka: #2b2b2f;
+
+	// Layouts
+	--header-height: 94px;
+
+	@include media($tablet) {
+		--header-height: 64px;
+	}
+
+	--section-padding: #{adapt(120, 60)};
+	--section-padding-05: #{adapt(60, 30)};
+
+	--container-width: 1200px;
+	--container-padding: 10px; //! даже если контейнер на весь экран, отступы оставь а ширину сделай на 100%
+
+	// Fonts
+	--font-size-html: 100%; // 1rem = 1px ===> calc(1 / 16 * 100%)
+	--font-size: #{adapt(18, 16)};
+	--line-height: 160%;
+	--letter-spacing: auto;
+
+	--font-family-main: "Inter-VF", "Inter_18pt", "Inter", sans-serif;
+	--font-family-title: "Unbounded-VF", "Unbounded", serif;
+}

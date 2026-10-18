@@ -1,0 +1,44 @@
+@use "../tools" as *;
+
+.about-services {
+	&__container {
+		@include flex-column;
+		gap: adapt(75, 40);
+		align-items: center;
+	}
+
+	&__title {
+		@include media($mobile, min) {
+			text-align: center;
+		}
+	}
+
+	&__list {
+		width: 100%;
+		gap: 20px;
+	}
+
+	&__item {
+	}
+}
+
+.about-services-item {
+	border-radius: adapt(24, 12);
+	overflow: hidden;
+
+	&__image {
+		height: 196px;
+	}
+
+	&__content {
+		padding: adapt(30, 10) adapt(15, 10);
+		@include flex-column;
+		gap: adapt(15, 10);
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+}

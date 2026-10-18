@@ -1,0 +1,63 @@
+@use "../tools" as *;
+
+.services-solutions {
+	&__container {
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__item {
+	}
+}
+
+.services-solutions-item {
+	padding: adapt(24, 10) adapt(26, 10);
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: wrap;
+
+	&__image {
+		flex: 0 0 282px;
+		min-height: 162px;
+		height: 100%;
+		border-radius: 16px 0;
+		overflow: hidden;
+
+		@include media($mobile) {
+			flex: 0 0 100%;
+		}
+	}
+
+	&__content {
+		//flex: 0 0 300px;
+		flex: 1;
+
+		@include media($mobile) {
+			flex: 1;
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid var(--myagkoe-tehnologichnoe-zoloto);
+		}
+		@include media($mobile) {
+			@include title-3-ui;
+		}
+	}
+
+	&__descr {
+		@include body-base;
+
+		@include media($mobile) {
+			@include body-s;
+		}
+	}
+}

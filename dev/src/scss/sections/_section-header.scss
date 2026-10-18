@@ -1,0 +1,30 @@
+@use "../tools" as *;
+
+.section-header {
+	@include flex-column;
+
+	&__label {
+		text-decoration: none;
+		&:not(:last-child) {
+			margin-bottom: adapt(60, 20);
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+			padding-bottom: adapt(20, 10);
+			border-bottom: 1px solid var(--myagkoe-tehnologichnoe-zoloto);
+		}
+	}
+
+	&__descr {
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+	}
+
+	&__btn {
+		align-self: flex-start;
+	}
+}

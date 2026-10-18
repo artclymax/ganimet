@@ -1,0 +1,75 @@
+@use "../tools" as *;
+
+.page-portfolio {
+	&__container {
+		@include flex-column;
+		gap: adapt(78, 60);
+	}
+
+	&__category-header {
+	}
+
+	&__category {
+	}
+
+	&__list {
+	}
+
+	&__item {
+	}
+}
+
+.page-portfolio-category {
+	@include reset-list;
+	@include flex-column;
+	gap: 20px;
+
+	&__item {
+	}
+
+	&__link {
+		@include reset-link;
+		display: grid;
+		grid-template-columns: 0.5fr 1fr;
+		border-radius: 24px;
+		overflow: hidden;
+		border: 1px solid var(--color-0);
+		transition: all 0.3s;
+
+		@include hover {
+			border-color: var(--myagkoe-tehnologichnoe-zoloto);
+		}
+		&.active-category {
+			border-color: var(--myagkoe-tehnologichnoe-zoloto);
+		}
+	}
+
+	&__image {
+		flex-shrink: 0;
+		display: flex;
+		height: 100%;
+		min-height: 120px;
+	}
+
+	&__content {
+		padding: adapt(37, 20);
+		@include flex-column;
+		justify-content: center;
+	}
+
+	&__title {
+	}
+}
+.page-portfolio-item {
+	&__image {
+		border-radius: adapt(24, 12);
+		display: flex;
+		height: adapt(325, 286);
+		width: 100%;
+		overflow: hidden;
+
+		img {
+			
+		}
+	}
+}

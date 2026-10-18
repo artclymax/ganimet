@@ -1,0 +1,47 @@
+@use "../tools" as *;
+//Typography
+.title,
+.title-1,
+.title-2,
+.title-3,
+.title-4,
+.title-5 {
+	@include reset;
+	line-height: var(--line-height);
+	color: var(--color-dark);
+}
+//.title-first {
+//	@include reset;
+//	line-height: 120%;
+//	font-weight: 400;
+//	font-family: var(--font-family-title);
+//	font-size: adapt(54, 30);
+//	text-transform: uppercase;
+//}
+
+.title-1 {
+	@include title-1;
+}
+
+.title-2 {
+	@include title-2;
+}
+
+.title-3 {
+	@include title-3;
+}
+
+.title-4 {
+	@include title-4;
+}
+.label {
+	@include label;
+	text-transform: uppercase;
+	text-decoration: underline;
+}
+.upcase {
+	text-transform: uppercase;
+}
+.t-center {
+	text-align: center !important;
+}

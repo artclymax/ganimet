@@ -1,0 +1,57 @@
+@use "../tools" as *;
+
+.contacts-box {
+	@include flex-column;
+	gap: adapt(20, 10);
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: 10px;
+	}
+
+	&__item {
+	}
+
+	&__link {
+		@include reset-link;
+	}
+
+	&__sublist {
+		@include reset-list;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+
+	&__subitem {
+		@include flex-center;
+	}
+
+	&__sublink {
+	}
+
+	&__content-box {
+	}
+
+	&__descr {
+		font-style: normal;
+	}
+
+	.icon {
+		--width: 44px;
+		--bg-size: 24px;
+		gap: adapt(20, 10);
+	}
+
+	.link-icon {
+		flex-shrink: 0;
+		@include square(32px);
+
+		img {
+			height: 100%;
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,103 @@
+@use "../tools" as *;
+
+.header {
+	position: relative;
+	z-index: 55;
+	padding-block: 20px;
+
+	@include media($tablet) {
+		padding-block: 10px;
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: adapt(20, 10);
+	}
+
+	&__logo {
+		@include media($tablet) {
+			margin-right: auto;
+		}
+	}
+
+	&__menu {
+	}
+
+	&__btn-box {
+		display: flex;
+		gap: adapt(40, 10, $tablet);
+		align-items: center;
+	}
+	&__messengers {
+		flex-shrink: 0;
+	}
+	&__btn {
+		flex: 0 0 200px;
+	}
+
+	&__phone-btn {
+	}
+
+	&__burger-btn {
+	}
+}
+
+.header-menu {
+	&__close-btn {
+		color: var(--glubokoe-teploe-zoloto);
+	}
+
+	&__wrapper {
+	}
+
+	&__item {
+	}
+
+	&__title {
+		@include body-l;
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__contacts-box {
+		@include flex-column;
+		gap: 20px;
+		&:not(:first-child) {
+			margin-top: 20px;
+		}
+	}
+
+	&__btn {
+	}
+}
+.menu-close-btn {
+}
+.visible-tablet {
+}
+.btn {
+}
+.hidden-tablet {
+}
+.contacts-box {
+	&__sublist {
+	}
+
+	&__subitem {
+	}
+
+	&__sublink {
+	}
+}
+.link-icon {
+}
+.btn--dark {
+}
+.phone-btn {
+}
+.burger-btn-icon {
+}
+.header-mobile-btn {
+}

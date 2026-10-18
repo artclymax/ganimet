@@ -1,0 +1,49 @@
+@use "../tools" as *;
+
+.breadcrumbs,
+.woocommerce-breadcrumb {
+	--gap: 6px;
+
+	@include label;
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap);
+	//font-size: 14px;
+	
+
+	& > span {
+		display: flex;
+		align-items: center;
+		gap: var(--gap);
+
+		&:not(:last-child) {
+			&::after {
+				display: inline-flex;
+				content: "";
+				@include square(adapt(24, 20));
+				@include bgimg(url("../../../public/images/icons/breadcrumbs-arrow.svg"));
+			}
+		}
+
+		a {
+			color: var(--osnovnoy-seryy-tekstovyy);
+			display: inline-flex;
+			color: inherit;
+			text-decoration: none;
+			transition: all 0.3s;
+			@include hover-link(var(--glubokoe-teploe-zoloto));
+		}
+	}
+	& > a {
+		display: inline-flex;
+		color: var(--osnovnoy-seryy-tekstovyy);
+		text-decoration: none;
+		transition: all 0.3s;
+		opacity: 1 !important;
+		@include hover-link;
+	}
+	.current-item {
+		//color: var(--white-100);
+	}
+}
